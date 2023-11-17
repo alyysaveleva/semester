@@ -1,0 +1,32 @@
+﻿<Page x:Class="SoldatovaCRUD.Pages.Registr"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:SoldatovaCRUD.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Registr">
+
+    <Grid>
+        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+            <TextBlock FontSize="25">Регистрация</TextBlock>
+            <TextBlock>Логин</TextBlock>
+            <TextBox Name="Login"></TextBox>
+            <TextBlock>ФИО</TextBlock>
+            <TextBox Name="nameFIO"></TextBox>
+            <TextBlock>Пароль</TextBlock>
+            <PasswordBox Name="Password"></PasswordBox>
+            <TextBlock>Подтвердите пароль</TextBlock>
+            <PasswordBox Name="ConfirmPassword"></PasswordBox>
+            <TextBlock Name="captchatext">Введите капчу</TextBlock>
+            <TextBox Name="captcha"></TextBox>
+            <TextBox Name="captchaPicture" Height="53" HorizontalAlignment="Center" FontSize="28" Foreground="Red" 
+                     TextDecorations="Strikethrough"  Background="{x:Null}" FontStretch="UltraCondensed" FontFamily="Segoe UI Black"></TextBox>
+            <Button Name="CaptchaCheck" Click="CaptchaCheck_Click">Проверка капчи</Button>
+            <Button Click="Registraciya" Name="registr">Зарегистрироваться</Button>
+            <TextBlock Name="timeout"></TextBlock>
+           
+        </StackPanel>
+    </Grid>
+</Page>
