@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using SoldatovaCRUD.Models;
 
 namespace SoldatovaCRUD.classes
 {
@@ -13,6 +14,6 @@ namespace SoldatovaCRUD.classes
     /// <returns></returns>
     internal class connect
     {
-        public static Models.SoldatovaCRUDEntities modelbd;
+        public static SoldatovaCRUDEntities modelbd;
     }
 }

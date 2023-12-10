@@ -118,9 +118,10 @@ namespace SoldatovaCRUD.Pages
         private void Registraciya(object sender, RoutedEventArgs e)
         {
             // Получаем данные из полей ввода
-            string login = Login.Text;
-            string password = Password.Password;
+            string login = login_.Text;
+            string password = password_.Password;
             string confirmPassword = ConfirmPassword.Password;
+            DateTime datetoday = DateTime.Now;
 
             // Проверяем, совпадают ли пароль и подтверждение пароля
             if (password != confirmPassword)
@@ -157,13 +158,15 @@ namespace SoldatovaCRUD.Pages
             // Создаем нового пользователя
             var newUser = new Models.Worker
             {
+                name = "user",
                 Login = login,
                 Password = password,
-                RoleID = 1, // 3 соответствует роли "Client"
+                RoleID = 4, // 3 соответствует роли "Client"
                 Date = datetoday,
-                Time = timeNow.TimeOfDay,
-                name = nameFIO.Text,
-                Picture = "/Сотрудники_import/Иванов.jpeg"
+                Time = datetoday.TimeOfDay,
+               Entry = 1,
+               
+                Picture = "/Res/Сотрудники_import/Иванов.jpeg"
 
 
             };
@@ -179,8 +182,8 @@ namespace SoldatovaCRUD.Pages
                     MessageBoxButton.OK, MessageBoxImage.Information);
 
                 // Очищаем поля ввода
-                Login.Clear();
-                Password.Clear();
+                login_.Clear();
+                password_.Clear();
                 ConfirmPassword.Clear();
             }
             catch (Exception ex)

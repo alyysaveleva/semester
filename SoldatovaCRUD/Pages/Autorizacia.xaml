@@ -9,14 +9,42 @@
       Title="Autorizacia">
 
     <Grid>
-        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+        <StackPanel x:Name="LoginBlock" HorizontalAlignment="Center" VerticalAlignment="Center">
             <TextBlock FontSize="25">Авторизация</TextBlock>
             <TextBlock>Логин</TextBlock>
             <TextBox Name="Login"></TextBox>
             <TextBlock>Пароль</TextBlock>
             <PasswordBox Name="Password"></PasswordBox>
-            <Button Click="Vxod">Войти</Button>
-            <Button Click="Registr">Регистрация</Button>
+            
+            <Button Click="Vxod"  Name="vxod">Войти</Button>
+            <Button Click="Registr" >Регистрация</Button>
+
+            <StackPanel x:Name="CaptchaTbBlock" Orientation="Horizontal" Height="28" Margin="0,10,0,0" Visibility="Collapsed">
+                <TextBlock Text="Капча:" Width="50" VerticalAlignment="Center"/>
+                <TextBox x:Name="CaptchaTB" Width="200"/>
+            </StackPanel>
+            <StackPanel x:Name="CaptchaBlock" Orientation="Vertical"  VerticalAlignment="Center" Visibility="Collapsed">
+                <Button Name="CheckCaptcha" Click="CheckCaptcha_Click">Подтвердить</Button>
+
+                <StackPanel Orientation="Horizontal">
+                    <Border Width="200" Height="75" BorderBrush="#FF707070" BorderThickness="1, 1, 0, 1">
+                        <Grid Width="200" Height="75" ClipToBounds="True" HorizontalAlignment="Center" VerticalAlignment="Center">
+                            <StackPanel Orientation="Horizontal" Name="SPanelSymbols" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            <Canvas Name="CanvasNoise"></Canvas>
+                        </Grid>
+                    </Border>
+                    <Button x:Name="BtnUpdateCaptcha" VerticalAlignment="Center" Click="BtnUpdateCaptcha_Click">
+                        Обновить
+                    </Button>
+                </StackPanel>
+            </StackPanel>
+        
+
+
+
+        <TextBlock x:Name="BlockedTB" Text="" Width="250" TextAlignment="Center" Foreground="Red" VerticalAlignment="Center" TextWrapping="Wrap"/>
+            <TextBlock x:Name="LoginTimerTB" Width="200" TextAlignment="Center" Foreground="Red" Visibility="Collapsed"/>
         </StackPanel>
+       
     </Grid>
 </Page>

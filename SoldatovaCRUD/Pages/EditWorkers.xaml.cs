@@ -1,6 +1,10 @@
-﻿using Microsoft.Win32;
+﻿using SoldatovaCRUD.classes;
+using SoldatovaCRUD.Models;
+using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity.Infrastructure;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,6 +18,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+
 namespace SoldatovaCRUD.Pages
 {
     /// <summary>
@@ -22,6 +27,109 @@ namespace SoldatovaCRUD.Pages
     public partial class EditWorkers : Page
     {
         public OpenFileDialog ofd = new OpenFileDialog();
+        private string newsourcepath = string.Empty;
+        string path = "";
+        private Worker currentWorker = new Worker();
+        DateTime datetoday = DateTime.Now;
+
+        public EditWorkers(Worker selectedWorker)
+        {
+            InitializeComponent();
+            if (selectedWorker != null)
+            {
+                currentWorker = selectedWorker;
+            }
+            DataContext = currentWorker;
+
+        }
+
+        private void Save(object sender, RoutedEventArgs e)
+        {
+            StringBuilder errors = new StringBuilder();
+            if (string.IsNullOrWhiteSpace(currentWorker.name))
+                errors.AppendLine("Укажите имя");
+            if (string.IsNullOrWhiteSpace(currentWorker.Login))
+                errors.AppendLine("Укажите логин");
+            if (currentWorker.RoleID==0)
+                errors.AppendLine("Укажите роль");
+            if (string.IsNullOrWhiteSpace(currentWorker.Password))
+                errors.AppendLine("Укажите пароль");
+            if (errors.Length > 0)
+            {
+                MessageBox.Show(errors.ToString(), "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            if (currentWorker.ID == 0)
+            {
+                currentWorker.Date = datetoday;
+                currentWorker.Time = datetoday.TimeOfDay;
+                currentWorker.Entry = 1;
+                SoldatovaCRUDEntities.getcontext().Workers.Add(currentWorker);
+            }
+            DbContextTransaction dbContextTransaction = null;
+
+            try
+            {
+                if (currentWorker.ID == 0)
+                {
+                    SoldatovaCRUDEntities.getcontext().Workers.Add(currentWorker);
+                }
+
+                dbContextTransaction = SoldatovaCRUDEntities.getcontext().Database.BeginTransaction();
+
+                SoldatovaCRUDEntities.getcontext().SaveChanges();
+
+                MessageBox.Show("Информация сохранена!");
+                dbContextTransaction.Commit();
+                manager.MainFrame.GoBack();
+            }
+            catch (DbUpdateException ex)
+            {
+                if (dbContextTransaction != null)
+                {
+                    dbContextTransaction.Rollback();
+                }
+
+                var innerException = ex.InnerException;
+                while (innerException != null)
+                {
+                    MessageBox.Show($"Внутреннее исключение: {innerException.Message}");
+                    innerException = innerException.InnerException;
+                }
+
+                MessageBox.Show("Ошибка при сохранении изменений. Дополнительные сведения в внутреннем исключении.");
+            }
+            catch (Exception ex)
+            {
+                if (dbContextTransaction != null)
+                {
+                    dbContextTransaction.Rollback();
+                }
+
+                MessageBox.Show($"Ошибка при обновлении записей. Дополнительные сведения: {ex.Message}");
+            }
+            finally
+            {
+                dbContextTransaction?.Dispose();
+            }
+        }
+
+     
+        private void Choose_image(object sender, RoutedEventArgs e)
+        {
+            string Source = Environment.CurrentDirectory;
+            if (ofd.ShowDialog() == true)
+            {
+                string SourcePath = ofd.SafeFileName;
+                newsourcepath = Source.Replace("/bin/Debug", "/Res/Сотрудники_import/") + SourcePath;
+                PreviewImage.Source = new BitmapImage(new Uri(ofd.FileName));
+                path = ofd.FileName;
+                currentWorker.Picture = $"/Res/Сотрудники_import/{ofd.SafeFileName}";
+            }
+        }
+    }
+}
+/*
+  public OpenFileDialog ofd = new OpenFileDialog();
         private Models.Worker currentWorker = new Models.Worker();
         private string newsourcepath = string.Empty;
         string path = "";
@@ -87,18 +195,4 @@ namespace SoldatovaCRUD.Pages
            
         }
 
-        private void Choose_image(object sender, RoutedEventArgs e)
-        {
-            string Source = Environment.CurrentDirectory;
-            if (ofd.ShowDialog() == true)
-            {
-                flag = true;
-                string SourcePath = ofd.SafeFileName;
-                newsourcepath = Source.Replace("/bin/Debug", "/Сотрудники_import/") + SourcePath;
-                PreviewImage.Source = new BitmapImage(new Uri(ofd.FileName));
-                path = ofd.FileName;
-                currentWorker.Picture = $"/Сотрудники_import/{ofd.SafeFileName}";
-            }
-        }
-    }
-}
+ */

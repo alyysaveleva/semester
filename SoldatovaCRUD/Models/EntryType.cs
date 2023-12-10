@@ -18,6 +18,7 @@ namespace SoldatovaCRUD.Models
         public EntryType()
         {
             this.Workers = new HashSet<Worker>();
+            this.Workers1 = new HashSet<Worker1>();
         }
     
         public int ID { get; set; }
@@ -25,5 +26,7 @@ namespace SoldatovaCRUD.Models
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Worker> Workers { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Worker1> Workers1 { get; set; }
     }
 }

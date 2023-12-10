@@ -11,7 +11,11 @@
             <RowDefinition Height="auto"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
         </Grid.RowDefinitions>
-        
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch">
+            <Image Source="/Res/stuff/3.png" Grid.Row="0" Height="100" HorizontalAlignment="Stretch"/>
+            <TextBlock VerticalAlignment="Center" HorizontalAlignment="Stretch"  FontFamily="Segoe Print" FontSize="48" Foreground="#FF00BFF3">CandyStore</TextBlock>
+            <TextBlock Name="TimerText" FontFamily="Courgette" FontSize="40" Foreground="#FF00BFF3" Margin="20,0,0,0" HorizontalAlignment="Stretch" VerticalAlignment="Center"/>
+        </StackPanel>
         <Frame Grid.Row="1" Name="MainFrame"></Frame>
     </Grid>
 </Window>

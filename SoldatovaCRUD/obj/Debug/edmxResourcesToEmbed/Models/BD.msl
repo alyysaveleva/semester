@@ -1,6 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="Хранилище SoldatovaCRUDModelContainer" CdmEntityContainer="SoldatovaCRUDEntities">
+    <EntitySetMapping Name="EntryHistories">
+      <EntityTypeMapping TypeName="SoldatovaCRUDModel.EntryHistory">
+        <MappingFragment StoreEntitySet="EntryHistory">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="DateTime" ColumnName="DateTime" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="EntryTypes">
       <EntityTypeMapping TypeName="SoldatovaCRUDModel.EntryType">
         <MappingFragment StoreEntitySet="EntryType">
@@ -9,8 +18,61 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="Merches">
+      <EntityTypeMapping TypeName="SoldatovaCRUDModel.Merch">
+        <MappingFragment StoreEntitySet="Merch">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="cost" ColumnName="cost" />
+          <ScalarProperty Name="sale" ColumnName="sale" />
+          <ScalarProperty Name="picture" ColumnName="picture" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Orders">
+      <EntityTypeMapping TypeName="SoldatovaCRUDModel.Order">
+        <MappingFragment StoreEntitySet="Order">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="DateOrder" ColumnName="DateOrder" />
+          <ScalarProperty Name="DateArrive" ColumnName="DateArrive" />
+          <ScalarProperty Name="Arrived" ColumnName="Arrived" />
+          <ScalarProperty Name="Place" ColumnName="Place" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="Cost" ColumnName="Cost" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="Sale" ColumnName="Sale" />
+          <ScalarProperty Name="MerchID" ColumnName="MerchID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OrderMerches">
+      <EntityTypeMapping TypeName="SoldatovaCRUDModel.OrderMerch">
+        <MappingFragment StoreEntitySet="OrderMerch">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+          <ScalarProperty Name="MerchID" ColumnName="MerchID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Places">
+      <EntityTypeMapping TypeName="SoldatovaCRUDModel.Place">
+        <MappingFragment StoreEntitySet="Places">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Place1" ColumnName="Place" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="Roles">
       <EntityTypeMapping TypeName="SoldatovaCRUDModel.Role">
+        <MappingFragment StoreEntitySet="Role">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="roleTitle" ColumnName="roleTitle" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Roles1">
+      <EntityTypeMapping TypeName="SoldatovaCRUDModel.Role1">
         <MappingFragment StoreEntitySet="Roles">
           <ScalarProperty Name="ID" ColumnName="ID" />
           <ScalarProperty Name="roleTitle" ColumnName="roleTitle" />
@@ -30,6 +92,21 @@
     </EntitySetMapping>
     <EntitySetMapping Name="Workers">
       <EntityTypeMapping TypeName="SoldatovaCRUDModel.Worker">
+        <MappingFragment StoreEntitySet="Worker">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="Login" ColumnName="Login" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Time" ColumnName="Time" />
+          <ScalarProperty Name="Entry" ColumnName="Entry" />
+          <ScalarProperty Name="Picture" ColumnName="Picture" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Workers1">
+      <EntityTypeMapping TypeName="SoldatovaCRUDModel.Worker1">
         <MappingFragment StoreEntitySet="Workers">
           <ScalarProperty Name="ID" ColumnName="ID" />
           <ScalarProperty Name="RoleID" ColumnName="RoleID" />

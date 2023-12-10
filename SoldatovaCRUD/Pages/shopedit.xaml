@@ -1,0 +1,30 @@
+﻿<Page x:Class="SoldatovaCRUD.Pages.shopedit"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:SoldatovaCRUD.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="shopedit">
+
+    <Grid>
+        <WrapPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <StackPanel Margin="10">
+                <TextBlock Margin="0 0 0 10">Название</TextBlock>
+                <TextBlock Margin="0 0 0 10">Цена</TextBlock>
+                <TextBlock Margin="0 0 0 10">Скидка</TextBlock>
+            </StackPanel>
+            <StackPanel Margin="10">
+                <TextBox Text="{Binding name}" Margin="0 0 0 10"></TextBox>
+                <TextBox Text="{Binding cost}" Margin="0 0 0 10"></TextBox>
+                <TextBox Text="{Binding sale}" Margin="0 0 0 10"></TextBox>
+                <!-- <TextBox Text="{Binding Date}" Margin="0 0 0 10"></TextBox>
+                <TextBox Text="{Binding Time}" Margin="0 0 0 10"></TextBox>-->
+                <Button Click="Choose_image" >Выбрать картинку</Button>
+                <Image Name="PreviewImage" Height="60" Source="{Binding picture}"></Image>
+                <Button Width="60" Height="20" FontSize="10" Click="Save" >Сохранить</Button>
+            </StackPanel>
+        </WrapPanel>
+    </Grid>
+</Page>

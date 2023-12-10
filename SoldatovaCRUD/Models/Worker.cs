@@ -14,6 +14,12 @@ namespace SoldatovaCRUD.Models
     
     public partial class Worker
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Worker()
+        {
+            this.EntryHistories = new HashSet<EntryHistory>();
+        }
+    
         public int ID { get; set; }
         public int RoleID { get; set; }
         public string name { get; set; }
@@ -24,18 +30,9 @@ namespace SoldatovaCRUD.Models
         public int Entry { get; set; }
         public string Picture { get; set; }
     
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<EntryHistory> EntryHistories { get; set; }
         public virtual EntryType EntryType { get; set; }
         public virtual Role Role { get; set; }
-
-    public string Dates
-        {
-            get
-            {
-                string[] times = Convert.ToString(Date).Split(new char[] { ' ' });
-               string dates = times[0];
-                return dates;
-            }
-        }
-
     }
 }

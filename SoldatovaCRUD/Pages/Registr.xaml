@@ -12,19 +12,19 @@
         <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
             <TextBlock FontSize="25">Регистрация</TextBlock>
             <TextBlock>Логин</TextBlock>
-            <TextBox Name="Login"></TextBox>
+            <TextBox Name="login_"></TextBox>
             <TextBlock>ФИО</TextBlock>
             <TextBox Name="nameFIO"></TextBox>
             <TextBlock>Пароль</TextBlock>
-            <PasswordBox Name="Password"></PasswordBox>
+            <PasswordBox Name="password_"></PasswordBox>
             <TextBlock>Подтвердите пароль</TextBlock>
             <PasswordBox Name="ConfirmPassword"></PasswordBox>
             <TextBlock Name="captchatext">Введите капчу</TextBlock>
             <TextBox Name="captcha"></TextBox>
             <TextBox Name="captchaPicture" Height="53" HorizontalAlignment="Center" FontSize="28" Foreground="Red" 
                      TextDecorations="Strikethrough"  Background="{x:Null}" FontStretch="UltraCondensed" FontFamily="Segoe UI Black"></TextBox>
-            <Button Name="CaptchaCheck" Click="CaptchaCheck_Click">Проверка капчи</Button>
-            <Button Click="Registraciya" Name="registr">Зарегистрироваться</Button>
+            <Button Name="CaptchaCheck" Click="CaptchaCheck_Click" >Проверка капчи</Button>
+            <Button Click="Registraciya" Name="registr" >Зарегистрироваться</Button>
             <TextBlock Name="timeout"></TextBlock>
            
         </StackPanel>

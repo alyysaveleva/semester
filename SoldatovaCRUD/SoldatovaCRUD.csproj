@@ -35,17 +35,32 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CommonServiceLocator, Version=2.0.2.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>packages\CommonServiceLocator.2.0.2\lib\net47\CommonServiceLocator.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="GalaSoft.MvvmLight, Version=5.4.1.0, Culture=neutral, PublicKeyToken=e7570ab207bcb616, processorArchitecture=MSIL">
+      <HintPath>packages\MvvmLightLibs.5.4.1.1\lib\net45\GalaSoft.MvvmLight.dll</HintPath>
+    </Reference>
+    <Reference Include="GalaSoft.MvvmLight.Extras, Version=5.4.1.0, Culture=neutral, PublicKeyToken=669f0b5e8f868abf, processorArchitecture=MSIL">
+      <HintPath>packages\MvvmLightLibs.5.4.1.1\lib\net45\GalaSoft.MvvmLight.Extras.dll</HintPath>
+    </Reference>
+    <Reference Include="GalaSoft.MvvmLight.Platform, Version=5.4.1.0, Culture=neutral, PublicKeyToken=5f873c45e98af8a1, processorArchitecture=MSIL">
+      <HintPath>packages\MvvmLightLibs.5.4.1.1\lib\net45\GalaSoft.MvvmLight.Platform.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
+    <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\MvvmLightLibs.5.4.1.1\lib\net45\System.Windows.Interactivity.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -73,7 +88,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="classes\connect.cs" />
+    <Compile Include="classes\currentuser.cs" />
     <Compile Include="classes\manager.cs" />
+    <Compile Include="classes\sale.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -86,7 +103,31 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\order.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\orderMake.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\Registr.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\shop.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\shopedit.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\shopuser.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\UserHistory.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -111,10 +152,43 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>BD.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\BD1.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BD1.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\BD1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BD1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\BD1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BD1.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EntryHistory.cs">
+      <DependentUpon>BD.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\EntryType.cs">
       <DependentUpon>BD.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\Merch.cs">
+      <DependentUpon>BD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Order.cs">
+      <DependentUpon>BD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OrderMerch.cs">
+      <DependentUpon>BD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Place.cs">
+      <DependentUpon>BD.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\Role.cs">
+      <DependentUpon>BD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Role1.cs">
       <DependentUpon>BD.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\sysdiagram.cs">
@@ -123,14 +197,35 @@
     <Compile Include="Models\Worker.cs">
       <DependentUpon>BD.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\Worker1.cs">
+      <DependentUpon>BD.tt</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Autorizacia.xaml.cs">
       <DependentUpon>Autorizacia.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\EditWorkers.xaml.cs">
       <DependentUpon>EditWorkers.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\order.xaml.cs">
+      <DependentUpon>order.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\orderMake.xaml.cs">
+      <DependentUpon>orderMake.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Registr.xaml.cs">
       <DependentUpon>Registr.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\shop.xaml.cs">
+      <DependentUpon>shop.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\shopedit.xaml.cs">
+      <DependentUpon>shopedit.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\shopuser.xaml.cs">
+      <DependentUpon>shopuser.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\UserHistory.xaml.cs">
+      <DependentUpon>UserHistory.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\workers.xaml.cs">
       <DependentUpon>workers.xaml</DependentUpon>
@@ -149,9 +244,13 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
+      <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EntityDeploy Include="Models\BD1.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>BD1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
     <EntityDeploy Include="Models\BD.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>BD.Designer.cs</LastGenOutput>
@@ -159,14 +258,17 @@
     <None Include="Models\BD.edmx.diagram">
       <DependentUpon>BD.edmx</DependentUpon>
     </None>
+    <None Include="Models\BD1.edmx.diagram">
+      <DependentUpon>BD1.edmx</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
-    <None Include="Сотрудники_import\.DS_Store" />
-    <None Include="Сотрудники_import\~%24Сотрудники_import.xlsx" />
-    <None Include="Сотрудники_import\Сотрудники_import.xlsx" />
+    <None Include="Res\Сотрудники_import\.DS_Store" />
+    <None Include="Res\Сотрудники_import\~%24Сотрудники_import.xlsx" />
+    <None Include="Res\Сотрудники_import\Сотрудники_import.xlsx" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -174,27 +276,40 @@
   <ItemGroup>
     <Content Include="Models\BD.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>BD.Context.cs</LastGenOutput>
       <DependentUpon>BD.edmx</DependentUpon>
+      <LastGenOutput>BD.Context.cs</LastGenOutput>
     </Content>
     <Content Include="Models\BD.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>BD.edmx</DependentUpon>
       <LastGenOutput>BD.cs</LastGenOutput>
     </Content>
-    <Resource Include="Сотрудники_import\1.jpg" />
-    <Resource Include="Сотрудники_import\2.png" />
-    <Resource Include="Сотрудники_import\none.png" />
-    <Resource Include="Сотрудники_import\Беляева.jpeg" />
-    <Resource Include="Сотрудники_import\Иванов.jpeg" />
-    <Resource Include="Сотрудники_import\Игнатов.jpg" />
-    <Resource Include="Сотрудники_import\Миронов.jpeg" />
-    <Resource Include="Сотрудники_import\Петров.jpeg" />
-    <Resource Include="Сотрудники_import\Смирнова.jpeg" />
-    <Resource Include="Сотрудники_import\Стрелков.jpeg" />
-    <Resource Include="Сотрудники_import\Федоров.jpeg" />
-    <Resource Include="Сотрудники_import\Хохлов.jpeg" />
-    <Resource Include="Сотрудники_import\Ширяев.jpeg" />
+    <Content Include="Models\BD1.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>BD1.edmx</DependentUpon>
+      <LastGenOutput>BD1.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\BD1.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>BD1.edmx</DependentUpon>
+      <LastGenOutput>BD1.cs</LastGenOutput>
+    </Content>
+    <Resource Include="Res\stuff\3.png" />
+    <Resource Include="Res\stuff\choco.png" />
+    <Resource Include="Res\stuff\vanilla.png" />
+    <Resource Include="Res\Сотрудники_import\1.jpg" />
+    <Resource Include="Res\Сотрудники_import\2.png" />
+    <Resource Include="Res\Сотрудники_import\none.png" />
+    <Resource Include="Res\Сотрудники_import\Беляева.jpeg" />
+    <Resource Include="Res\Сотрудники_import\Иванов.jpeg" />
+    <Resource Include="Res\Сотрудники_import\Игнатов.jpg" />
+    <Resource Include="Res\Сотрудники_import\Миронов.jpeg" />
+    <Resource Include="Res\Сотрудники_import\Петров.jpeg" />
+    <Resource Include="Res\Сотрудники_import\Смирнова.jpeg" />
+    <Resource Include="Res\Сотрудники_import\Стрелков.jpeg" />
+    <Resource Include="Res\Сотрудники_import\Федоров.jpeg" />
+    <Resource Include="Res\Сотрудники_import\Хохлов.jpeg" />
+    <Resource Include="Res\Сотрудники_import\Ширяев.jpeg" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

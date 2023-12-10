@@ -1,0 +1,163 @@
+﻿<Page x:Class="SoldatovaCRUD.Pages.orderMake"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:SoldatovaCRUD.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="orderMake">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition ></RowDefinition>
+
+            <RowDefinition Height="auto"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition Width="2*"></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+<!--
+        <ListView  Grid.ColumnSpan="3" Name="LVItems"  MouseRightButtonDown="MyListView_MouseRightButtonDown" ItemsSource="{Binding SoldatovaCRUDEntities1}">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn>
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <StackPanel>
+                                    <TextBlock Text="{Binding Cost, StringFormat=Цена: {0}}"></TextBlock>
+                                    <TextBlock Text="{Binding Sale, StringFormat=Скидка: {0}}"></TextBlock>
+                                    <TextBlock Text="{Binding Code, StringFormat=Код: {0}}"></TextBlock>
+                                    <TextBlock Text="{Binding Amount, StringFormat=Количество: {0}}"></TextBlock>
+                                    <TextBlock Text="{Binding Arrived, StringFormat=Прибыло: {0}}"></TextBlock>
+                                    <TextBlock Text="{Binding Merch.name, StringFormat=наименование: {0}}"></TextBlock>
+                                </StackPanel>
+
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn>
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal">
+                                    <Button Click="additem_Click" >+</Button>
+                                    <Button Click="delitem_Click" >-</Button>
+                                </StackPanel>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                </GridView>
+            </ListView.View>
+
+
+
+        </ListView>-->
+
+      <!--  <FlowDocumentReader xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Grid.ColumnSpan="3">
+            <FlowDocument Name="token">
+                <Paragraph>
+                    <Bold>Редактировать заказ</Bold>
+                </Paragraph>
+
+                <List Name="ListItem" >
+                    <ListItem >
+                        <Paragraph>
+                            <TextBlock Name="MerchName"></TextBlock>
+                        </Paragraph>
+                    </ListItem>
+                    <ListItem >
+                        <Paragraph>
+                            <TextBlock Name="MerchCost"></TextBlock>
+                        </Paragraph>
+                    </ListItem>
+                    <ListItem >
+                        <Paragraph>
+                            <TextBlock Name="MerchSale"></TextBlock>
+                        </Paragraph>
+                    </ListItem>
+                    <ListItem >
+                        <Paragraph>
+                            <TextBlock Name="AmountText"></TextBlock>
+                        </Paragraph>
+                    </ListItem>
+                    <ListItem >
+                        <Paragraph>
+                            <TextBlock Name="Date1"></TextBlock>
+                        </Paragraph>
+                    </ListItem>
+
+                    <ListItem >
+                        <Paragraph>
+                            <TextBlock Name="Date2"></TextBlock>
+                        </Paragraph>
+                    </ListItem>
+                    <ListItem >
+                        <Paragraph>
+                            <TextBlock Name="PlaceText"></TextBlock>
+                        </Paragraph>
+                    </ListItem>
+                 
+                </List>
+                <Section>
+                    <Paragraph>
+                        
+                        <WrapPanel Grid.ColumnSpan="3" Orientation="Horizontal" >
+                            <StackPanel Grid.Row="1" Background="White" HorizontalAlignment="Center" VerticalAlignment="Center" >
+
+                                <TextBlock Grid.Row="1" TextAlignment="Center" VerticalAlignment="Center">Выберите пункт выдачи:</TextBlock>
+                                <ComboBox Height="23" Name="Places" Grid.Row="2" Grid.Column="1" Text="Выберите место выдачи" SelectionChanged="Places_SelectionChanged" >
+                                    <ComboBoxItem Content="North"/>
+                                    <ComboBoxItem Content="West"/>
+                                    <ComboBoxItem Content="East"/>
+                                    <ComboBoxItem Content="South"/>
+                                </ComboBox>
+
+                                <Button HorizontalAlignment="Stretch" Name="order" Grid.Row="1" Click="order_Click"  Grid.Column="2" >Заказать</Button>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <Button  Width="50">-</Button>
+                                <TextBlock Name="amounttext"></TextBlock>
+                                <Button  Width="50">+</Button>
+                            </StackPanel>
+                        </WrapPanel>
+
+
+                    </Paragraph>
+                </Section>
+            </FlowDocument>
+
+        </FlowDocumentReader>-->
+        <StackPanel>
+            <TextBlock Name="MerchName"></TextBlock>
+            <TextBlock Name="MerchCost"></TextBlock>
+            <TextBlock Name="MerchSale"></TextBlock>
+            <TextBlock Name="AmountText"></TextBlock>
+            <TextBlock Name="Date1"></TextBlock>
+            <TextBlock Name="Date2"></TextBlock>
+            <TextBlock Name="PlaceText"></TextBlock>
+
+        </StackPanel>
+        <WrapPanel Grid.ColumnSpan="3" Orientation="Horizontal" Grid.Row="1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+            <StackPanel Grid.Row="1" Background="White" HorizontalAlignment="Center" VerticalAlignment="Center" >
+
+                <TextBlock Grid.Row="1" TextAlignment="Center" VerticalAlignment="Center">Выберите пункт выдачи:</TextBlock>
+                <ComboBox Height="23" Name="Places" Grid.Row="2"  Text="Выберите место выдачи" SelectionChanged="Places_SelectionChanged" >
+                    <ComboBoxItem Content="North"/>
+                    <ComboBoxItem Content="West"/>
+                    <ComboBoxItem Content="East"/>
+                    <ComboBoxItem Content="South"/>
+                </ComboBox>
+
+                <Button HorizontalAlignment="Stretch" Name="order" Grid.Row="1" Click="order_Click"   >Заказать</Button>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Grid.Column="1">
+                <Button  Click="additem_Click" HorizontalAlignment="Stretch" Width="50" FontSize="30">+</Button>
+                <TextBlock Name="amounttext" Text="1"></TextBlock>
+                <Button  Click="delitem_Click" HorizontalAlignment="Stretch" Width="50" FontSize="30">-</Button>
+            </StackPanel>
+        </WrapPanel>
+    </Grid>
+</Page>

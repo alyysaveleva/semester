@@ -14,7 +14,7 @@
                 <TextBlock Margin="0 0 0 10">ФИО</TextBlock>
                 <TextBlock Margin="0 0 0 10">Логин</TextBlock>
                 <TextBlock Margin="0 0 0 10">Пароль</TextBlock>
-                <TextBlock Margin="0 0 0 10">Роль(1 до 3)</TextBlock>
+                <TextBlock Margin="0 0 0 10">Роль(1 до 4)</TextBlock>
             </StackPanel>
             <StackPanel Margin="10">
                 <TextBox Text="{Binding name}" Margin="0 0 0 10"></TextBox>
@@ -23,9 +23,9 @@
                 <TextBox Text="{Binding RoleID}" Margin="0 0 0 10"></TextBox>
                <!-- <TextBox Text="{Binding Date}" Margin="0 0 0 10"></TextBox>
                 <TextBox Text="{Binding Time}" Margin="0 0 0 10"></TextBox>-->
-                <Button Click="Choose_image">Выбрать аватарку</Button>
+                <Button Click="Choose_image" >Выбрать аватарку</Button>
                 <Image Name="PreviewImage" Height="60" Source="{Binding Picture}"></Image>
-                <Button Width="60" Height="20" Click="Save">Сохранить</Button>
+                <Button Width="60" Height="20" FontSize="10" Click="Save" >Сохранить</Button>
             </StackPanel>
         </WrapPanel>
     </Grid>

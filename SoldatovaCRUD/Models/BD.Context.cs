@@ -28,16 +28,23 @@ namespace SoldatovaCRUD.Models
                 context = new Models.SoldatovaCRUDEntities();
             }
             return context;
-
         }
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<EntryHistory> EntryHistories { get; set; }
         public virtual DbSet<EntryType> EntryTypes { get; set; }
+        public virtual DbSet<Merch> Merches { get; set; }
+        public virtual DbSet<Order> Orders { get; set; }
+        public virtual DbSet<OrderMerch> OrderMerches { get; set; }
+        public virtual DbSet<Place> Places { get; set; }
         public virtual DbSet<Role> Roles { get; set; }
+        public virtual DbSet<Role1> Roles1 { get; set; }
         public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<Worker> Workers { get; set; }
+        public virtual DbSet<Worker1> Workers1 { get; set; }
     }
 }
