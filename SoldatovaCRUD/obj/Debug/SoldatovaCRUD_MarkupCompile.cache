@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-D:\CRUD\SoldatovaCRUD\obj\Debug\
+L:\CRUD\SoldatovaCRUD\obj\Debug\
 SoldatovaCRUD
 none
 false
 DEBUG;TRACE
-D:\CRUD\SoldatovaCRUD\App.xaml
+L:\CRUD\SoldatovaCRUD\App.xaml
 11-1152860470
 4-581129707
 36972522257
-127-1968175858
+127-65326244
 MainWindow.xaml;Pages\Autorizacia.xaml;Pages\EditWorkers.xaml;Pages\order.xaml;Pages\orderMake.xaml;Pages\Registr.xaml;Pages\shop.xaml;Pages\shopedit.xaml;Pages\shopuser.xaml;Pages\UserHistory.xaml;Pages\workers.xaml;
 
 False

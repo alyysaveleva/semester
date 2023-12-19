@@ -14,6 +14,6 @@ namespace SoldatovaCRUD.classes
     /// <returns></returns>
     internal class connect
     {
-        public static SoldatovaCRUDEntities modelbd;
+        public static SoldatovaCRUDEntities1 modelbd;
     }
 }

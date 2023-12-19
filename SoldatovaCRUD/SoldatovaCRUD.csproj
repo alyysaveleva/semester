@@ -294,6 +294,9 @@
       <DependentUpon>BD1.edmx</DependentUpon>
       <LastGenOutput>BD1.cs</LastGenOutput>
     </Content>
+    <Resource Include="Res\stuff\1.png" />
+    <Resource Include="Res\stuff\a.jpeg" />
+    <Resource Include="Res\stuff\o.jpg" />
     <Resource Include="Res\stuff\3.png" />
     <Resource Include="Res\stuff\choco.png" />
     <Resource Include="Res\stuff\vanilla.png" />

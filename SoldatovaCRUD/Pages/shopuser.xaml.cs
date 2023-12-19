@@ -31,7 +31,7 @@ namespace SoldatovaCRUD.Pages
         {
             InitializeComponent();
           
-            LVOrder.ItemsSource = Models.SoldatovaCRUDEntities.getcontext().Merches.ToList();
+            LVOrder.ItemsSource = Models.SoldatovaCRUDEntities1.getcontext().Merches.ToList();
 
             
             UsersID = userID;
@@ -92,8 +92,8 @@ namespace SoldatovaCRUD.Pages
                     MerchID = selectedMerch.ID
                 };
 
-                SoldatovaCRUDEntities.getcontext().Orders.Add(Item);
-                SoldatovaCRUDEntities.getcontext().SaveChanges();
+                SoldatovaCRUDEntities1.getcontext().Orders.Add(Item);
+                SoldatovaCRUDEntities1.getcontext().SaveChanges();
                 classes.manager.MainFrame.Navigate(new orderMake(Item, UsersID));
             }
         }

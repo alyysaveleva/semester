@@ -34,7 +34,7 @@ namespace SoldatovaCRUD.Pages
             //DGworkers.ItemsSource = SoldatovaCRUDEntities1.getcontext().Workers.ToList();
             //DGworkers.IsReadOnly = false;
             //DGworkers.RowEditEnding += DGworkers_RowEditEnding;
-            workerCollection = new ObservableCollection<Worker>(SoldatovaCRUDEntities.getcontext().Workers.ToList());
+            workerCollection = new ObservableCollection<Worker>(SoldatovaCRUDEntities1.getcontext().Workers.ToList());
             DGworkers.ItemsSource = workerCollection;
             //DGworkers.ItemsSource = SoldatovaCRUDEntities1.getcontext().Workers.ToList();
             Sortby.ItemsSource = new string[] { "name", "password", "login", "date", "time", "role"};
@@ -172,8 +172,7 @@ namespace SoldatovaCRUD.Pages
             {
                 try
                 {
-                    Models.SoldatovaCRUDEntities.getcontext().Workers.RemoveRange(workerForRemoving);
-                    Models.SoldatovaCRUDEntities.getcontext().SaveChanges();
+                    Models.SoldatovaCRUDEntities1.getcontext().Workers.RemoveRange(workerForRemoving);
                     MessageBox.Show("Все удалилось");
                 }
                 catch

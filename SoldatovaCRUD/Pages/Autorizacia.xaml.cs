@@ -39,7 +39,7 @@ namespace SoldatovaCRUD.Pages
             InitializeComponent();
             duration = TimeSpan.FromMinutes(1);
             StartTimer();
-            classes.connect.modelbd = new Models.SoldatovaCRUDEntities();
+            classes.connect.modelbd = new Models.SoldatovaCRUDEntities1();
             if(classes.currentuser.Activesession == true)
             {
                 duration = TimeSpan.FromMinutes(1);
@@ -245,8 +245,8 @@ namespace SoldatovaCRUD.Pages
 
                     classes.currentuser.AppBooted = TimeLogin;
                     classes.currentuser.ActiveUserID = UserID;
-                    SoldatovaCRUDEntities.getcontext().EntryHistories.Add(userhistory);
-                    SoldatovaCRUDEntities.getcontext().SaveChanges();
+                    SoldatovaCRUDEntities1.getcontext().EntryHistories.Add(userhistory);
+                    SoldatovaCRUDEntities1.getcontext().SaveChanges();
                     classes.manager.MainFrame.Navigate(new Pages.workers());
 
                     
@@ -256,8 +256,8 @@ namespace SoldatovaCRUD.Pages
                     App.Current.Resources["test"] = "Vis";
                     classes.currentuser.AppBooted = TimeLogin;
                     classes.currentuser.ActiveUserID = UserID;
-                    SoldatovaCRUDEntities.getcontext().EntryHistories.Add(userhistory);
-                    SoldatovaCRUDEntities.getcontext().SaveChanges();
+                    SoldatovaCRUDEntities1.getcontext().EntryHistories.Add(userhistory);
+                    SoldatovaCRUDEntities1.getcontext().SaveChanges();
                     classes.manager.MainFrame.Navigate(new Pages.shop());
 
                 }
@@ -265,8 +265,8 @@ namespace SoldatovaCRUD.Pages
                 {
                     classes.currentuser.AppBooted = TimeLogin;
                     classes.currentuser.ActiveUserID = UserID;
-                    SoldatovaCRUDEntities.getcontext().EntryHistories.Add(userhistory);
-                    SoldatovaCRUDEntities.getcontext().SaveChanges();
+                    SoldatovaCRUDEntities1.getcontext().EntryHistories.Add(userhistory);
+                    SoldatovaCRUDEntities1.getcontext().SaveChanges();
                     classes.manager.MainFrame.Navigate(new Pages.shop());
 
 
@@ -275,8 +275,8 @@ namespace SoldatovaCRUD.Pages
                 {
                     classes.currentuser.AppBooted = TimeLogin;
                     classes.currentuser.ActiveUserID = UserID;
-                    SoldatovaCRUDEntities.getcontext().EntryHistories.Add(userhistory);
-                    SoldatovaCRUDEntities.getcontext().SaveChanges();
+                    SoldatovaCRUDEntities1.getcontext().EntryHistories.Add(userhistory);
+                    SoldatovaCRUDEntities1.getcontext().SaveChanges();
                     classes.manager.MainFrame.Navigate(new Pages.shopuser(UserID));
                     
                     
@@ -295,7 +295,7 @@ namespace SoldatovaCRUD.Pages
         {
             InitializeComponent();
 
-            classes.connect.modelbd = new Models.SoldatovaCRUDEntities1();
+            classes.connect.modelbd = new Models.SoldatovaCRUDEntities11();
             SoldatovaCRUD.App.Current.Resources["test"] = "invis";
         }
         //переход на страницу Registr при нажатии кнопки

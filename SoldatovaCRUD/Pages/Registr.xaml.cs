@@ -32,7 +32,7 @@ namespace SoldatovaCRUD.Pages
            
             InitializeComponent();
             //подключение к БД
-            classes.connect.modelbd = new Models.SoldatovaCRUDEntities();
+            classes.connect.modelbd = new Models.SoldatovaCRUDEntities1();
             captcha.Visibility = Visibility.Collapsed;
             captchaPicture.Visibility = Visibility.Collapsed;
             captchatext.Visibility = Visibility.Collapsed;

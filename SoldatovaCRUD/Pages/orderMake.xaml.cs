@@ -75,7 +75,7 @@ namespace SoldatovaCRUD.Pages
             Date1.Text = $"Дата заказа: {dateord}";
             //CostText.Text = items.ToList().ToString();
             AmountText.Text = $"количество: {count}";
-            PlaceText.Text = $"Пункт выдачи: {PlaceName}";
+            PlaceText.Text = $"Пункт выдачи документов: {PlaceName}";
 
             
         }
@@ -160,9 +160,9 @@ namespace SoldatovaCRUD.Pages
                 var place = classes.connect.modelbd.Places.FirstOrDefault(row => row.ID == currentItem.Place);
                 datearr = dateord.AddDays(6);
                 currentItem.DateArrive = datearr;
-                Date2.Text = $"Дата приезда: {datearr}";
+                Date2.Text = $"Дата приезда документов: {datearr}";
                 PlaceName = place.Place1;
-                PlaceText.Text = $"Пункт выдачи: {PlaceName}";
+                PlaceText.Text = $"Пункт выдачи документов: {PlaceName}";
 
             }
             else if (selectedItem.Content.ToString() == "West")
@@ -171,9 +171,9 @@ namespace SoldatovaCRUD.Pages
                 var place = classes.connect.modelbd.Places.FirstOrDefault(row => row.ID == currentItem.Place);
                 datearr = dateord.AddDays(3);
                 currentItem.DateArrive = datearr;
-                Date2.Text = $"Дата приезда: {datearr}";
+                Date2.Text = $"Дата приезда документов: {datearr}";
                 PlaceName = place.Place1;
-                PlaceText.Text = $"Пункт выдачи: {PlaceName}";
+                PlaceText.Text = $"Пункт выдачи документов: {PlaceName}";
             }
             else if (selectedItem.Content.ToString() == "East")
             {
@@ -181,9 +181,9 @@ namespace SoldatovaCRUD.Pages
                 var place = classes.connect.modelbd.Places.FirstOrDefault(row => row.ID == currentItem.Place);
                 datearr = dateord.AddDays(7);
                 currentItem.DateArrive = datearr;
-                Date2.Text = $"Дата приезда: {datearr}";
+                Date2.Text = $"Дата приезда документов: {datearr}";
                 PlaceName = place.Place1;
-                PlaceText.Text = $"Пункт выдачи: {PlaceName}";
+                PlaceText.Text = $"Пункт выдачи документов: {PlaceName}";
             }
             else if (selectedItem.Content.ToString() == "South")
             {
@@ -191,9 +191,9 @@ namespace SoldatovaCRUD.Pages
                var place = classes.connect.modelbd.Places.FirstOrDefault(row => row.ID == currentItem.Place);
                 datearr = dateord.AddDays(1);
                 currentItem.DateArrive = datearr;
-                Date2.Text = $"Дата приезда: {datearr}";
+                Date2.Text = $"Дата приезда документов: {datearr}";
                 PlaceName = place.Place1;
-                PlaceText.Text = $"Пункт выдачи: {PlaceName}";
+                PlaceText.Text = $"Пункт выдачи документов: {PlaceName}";
             }
         }
     }
