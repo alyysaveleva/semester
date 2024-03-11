@@ -6,7 +6,7 @@
     <Application.Resources>
         <Style TargetType="{x:Type Button}">
             <!-- Цвет текста кнопки -->
-            <Setter Property="Background" Value="#FF006CB8" />
+            <Setter Property="Background" Value="White" />
             <Setter Property="Foreground" Value="White" />
             <!-- Новый шрифт -->
             <Setter Property="FontFamily" Value="Segoe UI Black"  />
@@ -15,7 +15,7 @@
                 <Setter.Value>
                     <ControlTemplate TargetType="Button">
                         <Border CornerRadius="10"
-                            Background="#FF006CB8"
+                            Background="LightGray"
                             BorderThickness="1">
                             <ContentPresenter
                             HorizontalAlignment="Center"
@@ -31,7 +31,7 @@
        
         <Style TargetType="{x:Type TextBlock}">
             <Setter Property="FontFamily" Value="Segoe UI Black" />
-            <Setter Property="Foreground" Value="#FF6BC2FF" />
+            <Setter Property="Foreground" Value="Green" />
         </Style>
 
         <Style TargetType="TextBlock" x:Key="small">

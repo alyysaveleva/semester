@@ -12,5 +12,7 @@
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("models/bd.tt")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("models/bd1.context.tt")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("models/bd1.tt")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("models/bd2.context.tt")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("models/bd2.tt")]
 
 

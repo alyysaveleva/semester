@@ -19,13 +19,13 @@ namespace SoldatovaCRUD.Models
             : base("name=SoldatovaCRUDEntities1")
         {
         }
-        public static SoldatovaCRUDEntities1 context;
+        public static SoldatovaCRUDEntities2 context;
 
-        public static SoldatovaCRUDEntities1 getcontext()
+        public static SoldatovaCRUDEntities2 getcontext()
         {
             if (context == null)
             {
-                context = new Models.SoldatovaCRUDEntities1();
+                context = new Models.SoldatovaCRUDEntities2();
             }
             return context;
 

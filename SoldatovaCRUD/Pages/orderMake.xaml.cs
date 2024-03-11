@@ -43,7 +43,7 @@ namespace SoldatovaCRUD.Pages
         public orderMake(Order Item, int UsersID)
         {
             InitializeComponent();
-            // LVItems.ItemsSource = SoldatovaCRUDEntities1.getcontext().Orders.ToList();
+            // LVItems.ItemsSource = SoldatovaCRUDEntities2.getcontext().Orders.ToList();
             var UserData = classes.connect.modelbd.Workers.FirstOrDefault(row => row.ID == UsersID);
             var userOrder = classes.connect.modelbd.Orders.FirstOrDefault(row => row.UserID == UsersID && row.ID == Item.ID);
             var Place = classes.connect.modelbd.Places.FirstOrDefault(row => row.ID == Item.Place);
@@ -120,7 +120,7 @@ namespace SoldatovaCRUD.Pages
 
 
 
-                  SoldatovaCRUDEntities1.getcontext().SaveChanges();
+                  SoldatovaCRUDEntities2.getcontext().SaveChanges();
                   classes.manager.MainFrame.Navigate(new order(currentItem, Userr));
               }*/
             classes.manager.MainFrame.Navigate(new order(currentItem, Userr));

@@ -13,7 +13,7 @@
         </Grid.RowDefinitions>
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch">
             <Image Source="/Res/stuff/1.png" Grid.Row="0" Height="100" HorizontalAlignment="Stretch"/>
-            <TextBlock Name="TimerText"  FontSize="40" Foreground="#FF006CB8" Margin="20,0,0,0" HorizontalAlignment="Stretch" VerticalAlignment="Center"/>
+            <TextBlock Name="TimerText"  FontSize="40" Foreground="DarkOliveGreen" Margin="20,0,0,0" HorizontalAlignment="Stretch" VerticalAlignment="Center"/>
         </StackPanel>
         <Frame Grid.Row="1" Name="MainFrame"></Frame>
     </Grid>

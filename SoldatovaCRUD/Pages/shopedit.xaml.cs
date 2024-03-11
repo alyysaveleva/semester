@@ -38,7 +38,7 @@ namespace SoldatovaCRUD.Pages
             if (currentProduct.ID == 0)
             {
                 
-                Models.SoldatovaCRUDEntities.getcontext().Merches.Add(currentProduct);
+                Models.SoldatovaCRUDEntities2.getcontext().Merches.Add(currentProduct);
 
                 StringBuilder errors = new StringBuilder();
                 if (string.IsNullOrWhiteSpace(currentProduct.name))
@@ -65,7 +65,7 @@ namespace SoldatovaCRUD.Pages
                     {
 
                         MessageBox.Show("added", "done");
-                        Models.SoldatovaCRUDEntities.getcontext().SaveChanges();
+                        Models.SoldatovaCRUDEntities2.getcontext().SaveChanges();
                     }
                     catch (Exception ex)
                     {
@@ -79,7 +79,7 @@ namespace SoldatovaCRUD.Pages
                 {
 
                     MessageBox.Show("added", "done");
-                    Models.SoldatovaCRUDEntities.getcontext().SaveChanges();
+                    Models.SoldatovaCRUDEntities2.getcontext().SaveChanges();
                 }
                 catch (Exception ex)
                 {

@@ -34,7 +34,7 @@ namespace SoldatovaCRUD.Pages
         private void RefreshPage()
         {
             workerCollection.Clear();
-            foreach (var merch in Models.SoldatovaCRUDEntities.getcontext().EntryHistories.ToList())
+            foreach (var merch in Models.SoldatovaCRUDEntities2.getcontext().EntryHistories.ToList())
             {
                 workerCollection.Add(merch);
             }

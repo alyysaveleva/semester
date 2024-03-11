@@ -32,7 +32,7 @@ namespace SoldatovaCRUD.Pages
 
             InitializeComponent();
             //подключение ListView к таблице Merch
-            LVOrder.ItemsSource = Models.SoldatovaCRUDEntities.getcontext().Merches.ToList();
+            LVOrder.ItemsSource = Models.SoldatovaCRUDEntities2.getcontext().Merches.ToList();
 
             if (ButtonVis)
             {
@@ -96,8 +96,8 @@ namespace SoldatovaCRUD.Pages
             {
                 try
                 {
-                    Models.SoldatovaCRUDEntities.getcontext().Merches.RemoveRange(workerForRemoving);
-                    Models.SoldatovaCRUDEntities.getcontext().SaveChanges();
+                    Models.SoldatovaCRUDEntities2.getcontext().Merches.RemoveRange(workerForRemoving);
+                    Models.SoldatovaCRUDEntities2.getcontext().SaveChanges();
                     MessageBox.Show("Все удалилось");
                 }
                 catch

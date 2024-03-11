@@ -141,7 +141,7 @@
 
         </StackPanel>
         <WrapPanel Grid.ColumnSpan="3" Orientation="Horizontal" Grid.Row="1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
-            <StackPanel Grid.Row="1" Background="White" HorizontalAlignment="Center" VerticalAlignment="Center" >
+            <StackPanel Grid.Row="1" Background="White" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10">
 
                 <TextBlock Grid.Row="1" TextAlignment="Center" VerticalAlignment="Center">Выберите пункт выдачи:</TextBlock>
                 <ComboBox Height="23" Name="Places" Grid.Row="2"  Text="Выберите место выдачи" SelectionChanged="Places_SelectionChanged" >

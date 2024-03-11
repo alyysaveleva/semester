@@ -31,12 +31,12 @@ namespace SoldatovaCRUD.Pages
         public workers()
         {
             InitializeComponent();
-            //DGworkers.ItemsSource = SoldatovaCRUDEntities1.getcontext().Workers.ToList();
+            //DGworkers.ItemsSource = SoldatovaCRUDEntities2.getcontext().Workers.ToList();
             //DGworkers.IsReadOnly = false;
             //DGworkers.RowEditEnding += DGworkers_RowEditEnding;
-            workerCollection = new ObservableCollection<Worker>(SoldatovaCRUDEntities1.getcontext().Workers.ToList());
+            workerCollection = new ObservableCollection<Worker>(SoldatovaCRUDEntities2.getcontext().Workers.ToList());
             DGworkers.ItemsSource = workerCollection;
-            //DGworkers.ItemsSource = SoldatovaCRUDEntities1.getcontext().Workers.ToList();
+            //DGworkers.ItemsSource = SoldatovaCRUDEntities2.getcontext().Workers.ToList();
             Sortby.ItemsSource = new string[] { "name", "password", "login", "date", "time", "role"};
             SortDir.ItemsSource = Enum.GetNames(typeof(ListSortDirection));
             FilterBy.ItemsSource = new string[] { "name", "password", "login" };
@@ -145,7 +145,7 @@ namespace SoldatovaCRUD.Pages
         private void RefreshPage()
         {
            workerCollection.Clear();
-            foreach (var merch in SoldatovaCRUDEntities.getcontext().Workers.ToList())
+            foreach (var merch in SoldatovaCRUDEntities2.getcontext().Workers.ToList())
             {
                 workerCollection.Add(merch);
               }
@@ -172,7 +172,7 @@ namespace SoldatovaCRUD.Pages
             {
                 try
                 {
-                    Models.SoldatovaCRUDEntities1.getcontext().Workers.RemoveRange(workerForRemoving);
+                    Models.SoldatovaCRUDEntities2.getcontext().Workers.RemoveRange(workerForRemoving);
                     MessageBox.Show("Все удалилось");
                 }
                 catch

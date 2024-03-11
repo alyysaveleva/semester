@@ -63,7 +63,7 @@ namespace SoldatovaCRUD.Pages
                 currentWorker.Date = datetoday;
                 currentWorker.Time = datetoday.TimeOfDay;
                 currentWorker.Entry = 1;
-                SoldatovaCRUDEntities.getcontext().Workers.Add(currentWorker);
+                SoldatovaCRUDEntities2.getcontext().Workers.Add(currentWorker);
             }
             DbContextTransaction dbContextTransaction = null;
 
@@ -71,12 +71,12 @@ namespace SoldatovaCRUD.Pages
             {
                 if (currentWorker.ID == 0)
                 {
-                    SoldatovaCRUDEntities.getcontext().Workers.Add(currentWorker);
+                    SoldatovaCRUDEntities2.getcontext().Workers.Add(currentWorker);
                 }
 
-                dbContextTransaction = SoldatovaCRUDEntities.getcontext().Database.BeginTransaction();
+                dbContextTransaction = SoldatovaCRUDEntities2.getcontext().Database.BeginTransaction();
 
-                SoldatovaCRUDEntities.getcontext().SaveChanges();
+                SoldatovaCRUDEntities2.getcontext().SaveChanges();
 
                 MessageBox.Show("Информация сохранена!");
                 dbContextTransaction.Commit();
@@ -150,7 +150,7 @@ namespace SoldatovaCRUD.Pages
                 currentWorker.Time = datetoday.TimeOfDay;
                 //currentWorker.Picture = "/Сотрудники_import/Иванов.jpeg";
                 currentWorker.Entry = 1;
-                Models.SoldatovaCRUDEntities.getcontext().Workers.Add(currentWorker);
+                Models.SoldatovaCRUDEntities2.getcontext().Workers.Add(currentWorker);
 
                 StringBuilder errors = new StringBuilder();
                 if (string.IsNullOrWhiteSpace(currentWorker.name))
@@ -184,7 +184,7 @@ namespace SoldatovaCRUD.Pages
                     {
 
                         MessageBox.Show("added", "done");
-                        Models.SoldatovaCRUDEntities.getcontext().SaveChanges();
+                        Models.SoldatovaCRUDEntities2.getcontext().SaveChanges();
                     }
                     catch (Exception ex)
                     {

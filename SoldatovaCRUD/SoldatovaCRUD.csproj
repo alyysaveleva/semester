@@ -167,35 +167,50 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>BD1.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\BD2.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BD2.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\BD2.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BD2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\BD2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BD2.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Models\EntryHistory.cs">
-      <DependentUpon>BD.tt</DependentUpon>
+      <DependentUpon>BD2.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\EntryType.cs">
-      <DependentUpon>BD.tt</DependentUpon>
+      <DependentUpon>BD2.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Merch.cs">
-      <DependentUpon>BD.tt</DependentUpon>
+      <DependentUpon>BD2.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Order.cs">
-      <DependentUpon>BD.tt</DependentUpon>
+      <DependentUpon>BD2.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\OrderMerch.cs">
-      <DependentUpon>BD.tt</DependentUpon>
+      <DependentUpon>BD2.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Place.cs">
-      <DependentUpon>BD.tt</DependentUpon>
+      <DependentUpon>BD2.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Role.cs">
-      <DependentUpon>BD.tt</DependentUpon>
+      <DependentUpon>BD2.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Role1.cs">
       <DependentUpon>BD.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\sysdiagram.cs">
-      <DependentUpon>BD.tt</DependentUpon>
+      <DependentUpon>BD2.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Worker.cs">
-      <DependentUpon>BD.tt</DependentUpon>
+      <DependentUpon>BD2.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Worker1.cs">
       <DependentUpon>BD.tt</DependentUpon>
@@ -261,6 +276,13 @@
     <None Include="Models\BD1.edmx.diagram">
       <DependentUpon>BD1.edmx</DependentUpon>
     </None>
+    <EntityDeploy Include="Models\BD2.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>BD2.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Models\BD2.edmx.diagram">
+      <DependentUpon>BD2.edmx</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -293,6 +315,16 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>BD1.edmx</DependentUpon>
       <LastGenOutput>BD1.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\BD2.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>BD2.edmx</DependentUpon>
+      <LastGenOutput>BD2.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\BD2.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>BD2.edmx</DependentUpon>
+      <LastGenOutput>BD2.cs</LastGenOutput>
     </Content>
     <Resource Include="Res\stuff\1.png" />
     <Resource Include="Res\stuff\a.jpeg" />
